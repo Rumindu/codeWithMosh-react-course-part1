@@ -1,6 +1,7 @@
-//PascalCasing
 function Message(){
-  //JSX
+  const name ='Rumindu';
+  if (name)
+    return <h1>Hello {name}</h1>
   return <h1>Hello world</h1>
 }
 

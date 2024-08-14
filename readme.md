@@ -1,47 +1,24 @@
-# Create List group component
-- By convention all the component will store on `components` folder in  the `src`.
-- Here create `ListGroup.tsx` file.
-``` 
-    src
-    │   App.css
-    │   App.tsx
-    │   main.tsx
-    │   vite-env.d.ts
-    │
-    ├───assets
-    │       react.svg
-    │
-    └───components
-            ListGroup.tsx
-```
-
-``` tsx 
-//ListGroup.tsx
-function ListGroup() {
+# Fragment
+- In React apps, a component can only return a single element. To return multiple elements, we have 3 solutions
+- ### Solution 1 - Wrap both `<h1>` and `<ul>` inside `<div>`
+- VS code shortcut for doing this wrapping
+  ![](assets/SmartSelect_20240814_100710_Samsung%20Notes.jpg)
+  ![](assets/Pasted%20image%2020240814100824.png)
+  ![](assets/SmartSelect_20240814_101050_Samsung%20Notes.jpg)
+  ``` tsx 
+  //ListGroup.tsx
+  ...
   return (
-    //if there is multiple markup lines  we should including markup within prentices
-    <ul className="list-group">
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">A second item</li>
-      <li className="list-group-item">A third item</li>
-      <li className="list-group-item">A fourth item</li>
-      <li className="list-group-item">And a fifth one</li>
-    </ul>
+    <div>
+      <h1>List</h1>
+      <ul className="list-group">
+        <li className="list-group-item">An item</li>
+        <li className="list-group-item">A second item</li>
+        <li className="list-group-item">A third item</li>
+        <li className="list-group-item">A fourth item</li>
+        <li className="list-group-item">And a fifth one</li>
+      </ul>
+    </div> 
   );
-}
-
-export default ListGroup;
-```
-
-``` tsx 
-//App.tsx
-import ListGroup from "./components/ListGroup";
-
-function App() {
-  //if there is only single line no need to put return markup within prentices
-  return <div><ListGroup /></div>
-}
-
-export default App;
-```
-- Get list group from [bootstrap documentation](https://getbootstrap.com/docs/5.3/components/list-group/). And replace `class` with `className`. Because `class` is reserved keyword in JS, therefore show a compile error.
+  ...
+  ```

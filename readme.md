@@ -8,5 +8,7 @@
   {items.length ===0 && <p>No item found</p>}
   ```
 - explain how it works using console on chrome development tools.
+
   ![](assets/Pasted%20image%2020240725135650.png)
+
 ---

@@ -1,70 +1,12 @@
 # Conditional Rendering
 - To conditionally render content, we can use an `if statement` or a `ternary` operator or `&&` operator.
-#### 2. Ternary operation ( `? :`)
-- Inside JSX we can't use `if statements`. 
-- Using `ternary` operations we can do conditional rendering inside JSX.
-- Inside the JSX we can only use html element or other react component. Only exception is `{ }` curly braces. Here we can render anything dynamically. 
-	``` tsx 
-  //ListGroup.tsx
-  function ListGroup() {
-    ...
-    return (
-      <>
-        <h1>List</h1>
-        {/* if this condition is true return <p>No item found</p> */}
-        {/* else return null, null means nothing would be render. */}
-        {items.length === 0 ? <p>No item found</p> : null}
-        <ul className="list-group">
-          ...
-        </ul>
-      </>
-    );
-  }
-    ...
-
-  ```
-  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/tree/fb3fc7951f8a2312701935d3bd5072cefd3b141d)
-
-- Sometimes this logic be more complicated and unreadable JSX . For those cases we extract this logic and store in a variable or constant. And include variable/constant name within `{ }` in JSX.
+#### 3. &&
+- Mostly common use way for Conditional rendering
+- If our condition is true result will be paragraph element. But if the condition is false, result of entire expression is false and nothing would be render on the screen. 
   ``` tsx 
-  //ListGroup.tsx
-  function ListGroup() {
-    ...
-    //store condition in variable
-    const message = items.length === 0 ? <p>No item found</p> : null
-
-    return (
-      <>
-        <h1>List</h1>
-        {/*render the constant*/}
-        {message}
-        ...
-      </>
-    );
-  }
-
-  export default ListGroup;
-
+  {/* "logic" && "value that return when condition is true" */}
+  {items.length ===0 && <p>No item found</p>}
   ```
-  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/tree/570ef703f3f501373e1bc238157d5434b9ce2e7b)
-  
-- we can move above logic inside the function. And calling the function within `{}` in JSX. Benefit of using function is we can get different parameters depending on condition and rendering items according to those.
-  ``` tsx 
-  //ListGroup.tsx
-  function ListGroup() {
-    ...
-    //declare function which returns logic
-    const getMessage = ()=>{
-      return items.length === 0 ? <p>No item found</p> : null
-    }
-
-    return (
-      <>
-        <h1>List</h1>
-        {/* calling the functon */}
-        {getMessage()}
-        ...
-      </>
-    );
-  }
-  ```
+- explain how it works using console on chrome development tools.
+  ![](assets/Pasted%20image%2020240725135650.png)
+---

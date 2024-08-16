@@ -1,12 +1,14 @@
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   items= [];
+  //store condition in variable
+  const message = items.length === 0 ? <p>No item found</p> : null
+
   return (
     <>
       <h1>List</h1>
-      {/* if this condition is true return <p>No item found</p> */}
-      {/* else return null, null means nothing would be render. */}
-      {items.length === 0 ? <p>No item found</p> : null}
+      {/*render the constant*/}
+      {message}
       <ul className="list-group">
         {items.map((item) => (
           <li key={item} className="list-group-item">

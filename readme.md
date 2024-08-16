@@ -23,3 +23,26 @@
     ...
 
   ```
+  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/tree/fb3fc7951f8a2312701935d3bd5072cefd3b141d)
+
+- Sometimes this logic be more complicated and unreadable JSX . For those cases we extract this logic and store in a variable or constant. And include variable/constant name within `{ }` in JSX.
+  ``` tsx 
+  //ListGroup.tsx
+  function ListGroup() {
+    ...
+    //store condition in variable
+    const message = items.length === 0 ? <p>No item found</p> : null
+
+    return (
+      <>
+        <h1>List</h1>
+        {/*render the constant*/}
+        {message}
+        ...
+      </>
+    );
+  }
+
+  export default ListGroup;
+
+  ```

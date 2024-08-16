@@ -46,3 +46,25 @@
   export default ListGroup;
 
   ```
+  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/tree/570ef703f3f501373e1bc238157d5434b9ce2e7b)
+  
+- we can move above logic inside the function. And calling the function within `{}` in JSX. Benefit of using function is we can get different parameters depending on condition and rendering items according to those.
+  ``` tsx 
+  //ListGroup.tsx
+  function ListGroup() {
+    ...
+    //declare function which returns logic
+    const getMessage = ()=>{
+      return items.length === 0 ? <p>No item found</p> : null
+    }
+
+    return (
+      <>
+        <h1>List</h1>
+        {/* calling the functon */}
+        {getMessage()}
+        ...
+      </>
+    );
+  }
+  ```

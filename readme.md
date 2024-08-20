@@ -1,14 +1,10 @@
-# Conditional Rendering
-- To conditionally render content, we can use an `if statement` or a `ternary` operator or `&&` operator.
-#### 3. &&
-- Mostly common use way for Conditional rendering
-- If our condition is true result will be paragraph element. But if the condition is false, result of entire expression is false and nothing would be render on the screen. 
-  ``` tsx 
-  {/* "logic" && "value that return when condition is true" */}
-  {items.length ===0 && <p>No item found</p>}
+# Handle events
+- Here we see handle **Click event** on the component.
+- Clicked on each item of the list and get a out put in the console. In React each html has property called `onClick`.
+  ``` jsx 
+  <li
+      key={item}
+      className="list-group-item"
+      onClick={() => console.log("Clicked")}
+    >
   ```
-- explain how it works using console on chrome development tools.
-
-  ![](assets/Pasted%20image%2020240725135650.png)
-
----

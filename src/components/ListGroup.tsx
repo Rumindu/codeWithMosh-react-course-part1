@@ -1,5 +1,12 @@
+//must be import
+import { MouseEvent } from "react";
+
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+
+  //Event handler
+  //the job is handling the event in this case click events
+  const handleClick=(event:MouseEvent)=>console.log(event)
 
   return (
     <>
@@ -10,7 +17,8 @@ function ListGroup() {
           <li
             key={item}
             className="list-group-item"
-            onClick={(e) => console.log(e.pageX)}
+            // don't put () when calling event handler
+            onClick={handleClick}
           >
             {item}
           </li>

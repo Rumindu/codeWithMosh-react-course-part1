@@ -35,3 +35,10 @@
   ))}
   ```
   ![](assets/Pasted%20image%2020240820205704.png)
+- Arrow function, which is calling on `onClick` can optionally has parameter that represent browser event. We can called it `e` or `event`. let's log it on console and see what we can see.
+  ``` tsx 
+  onClick={(e) => console.log(e)}
+  ```
+  ![](assets/Pasted%20image%2020240820212659.png)
+- Type of this object is `SyntheticBaseEvent` which wrapped around around browser event object. This is built in class in React. Reason for having this is cross browser compatibility.
+  ![](assets/SmartSelect_20240820_213351_Samsung%20Notes.jpg)

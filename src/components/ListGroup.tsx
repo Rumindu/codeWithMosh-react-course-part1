@@ -1,10 +1,9 @@
+import { useState } from "react";
+
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-
-  //clicked item tracking variable
-  // let selectedIndex = -1 means no item is clicked
-  let selectedIndex = 0;// by default 1st item is clicked
-
+  const arr = useState(-1);
+  console.log(arr[0]); //-1 at initial rendering
   return (
     <>
       <h1>List</h1>
@@ -15,13 +14,11 @@ function ListGroup() {
             key={item}
             className={
               // apply active class with conditional rendering
-              index === selectedIndex
-                ? "list-group-item active"
-                : "list-group-item"
+              index === arr[0] ? "list-group-item active" : "list-group-item"
             }
             onClick={() => {
-              // updating value of tracking variable
-              selectedIndex = index;
+              // updating value of arr[0] using updater function
+              arr[1](index);
             }}
           >
             {item}

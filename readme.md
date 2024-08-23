@@ -74,3 +74,40 @@
     );
   }
   ```
+  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/blob/070cf37bd8a66a24b7864fbba26be32ba7637369/src/components/ListGroup.tsx)
+- Instead of working 2 individual elements easier to destructor the array into elements.
+  ``` tsx 
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  ```
+- The convention of naming elements is `const[state_variable,setState_variable]`.
+  ``` tsx 
+  import { useState } from "react";
+
+  function ListGroup() {
+
+    //Here we can use let instead of const. 
+    //But using const helps prevent accidental reassignments
+    //and makes the code easier to understand.
+    const [selectedIndex, setSelectedIndex] = useState(-1);
+    return (
+      <>
+        ...
+          <li
+            key={item}
+            className={
+              // apply active class with conditional rendering
+              index === selectedIndex
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            onClick={() => {
+              // updating state variable.
+              setSelectedIndex(index);
+            }}
+          >
+            {item}
+          </li>
+        ...
+    );
+  }
+  ```

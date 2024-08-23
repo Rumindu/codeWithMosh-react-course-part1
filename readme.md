@@ -111,3 +111,13 @@
     );
   }
   ```
+  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/blob/700bb24e43ad30b80911d23f84d50e67cac67f29/src/components/ListGroup.tsx)
+- Each component has its own state.
+- To explain that add another `ListGroup` component in the `App` component.
+  ``` tsx
+  function App() {
+    return <div> <ListGroup/><ListGroup/></div>;
+  }
+  ```
+  ![](assets/Pasted%20image%2020240823124209.png)
+- Here we can see each `<ListGroup>` has its own state. First `<ListGroup>`'s selected item isn't selected on 2nd `<ListGroup>`. There will be independent on each other

@@ -1,9 +1,7 @@
-import { useState } from "react";
-
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
-   //clicked item tracking variable
+  //clicked item tracking variable
   // let selectedIndex = -1 means no item is clicked
   let selectedIndex = 0;// by default 1st item is clicked
 

@@ -33,8 +33,18 @@
     );
   }
   ```
+  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/blob/e3325a183064499cb505d283123beda72bd05565/src/App.tsx)
 - Now in the `ListGroup`component we don't have `items` any more. we need to apply `props.` as a prefix to `items`.
   ``` tsx 
   //ListGroup.tsx
   {props.items.length === 0 && <p>No item found</p>}
+  ```
+  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/blob/e3325a183064499cb505d283123beda72bd05565/src/components/ListGroup.tsx)
+- Here `props.` is repeatedly applying. So better solution is destructor the parameter and no need to apply `props.` when accessing props.
+  ``` tsx 
+  function ListGroup({items,heading}:Props) {
+    return (
+      <>
+        <h1>{heading}</h1>
+        ...
   ```

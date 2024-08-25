@@ -1,6 +1,6 @@
 # Passing Functions via component.
 - If we want to set something happen when list's item is selected like redirect to different page or get an alert. But it may be different from one application to another. Therefore we don't define this function inside the relevant component to preserve reusability. The function will be pass as a prop to the component. Component contains only just a signature of this function.
-- Define ==signature of function== inside the props interface.
+- Define **signature of function** inside the props interface.
   ``` tsx 
   //ListGroup.tsx
   interface Props {

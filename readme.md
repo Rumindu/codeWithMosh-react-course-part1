@@ -30,3 +30,14 @@
     );
   }
   ```
+  [Source code](https://github.com/Rumindu/codeWithMosh-react-course-part1/tree/9e0b12cbc7d6b516f5d7a4d00fe3ef75eff4636b/src)
+- we can also pass html content like `<Alert><span>Danger!!!</span></Alert>`instead of a simple string.
+- If we are going to implement this one in above code we get an error
+  ![](assets/Pasted%20image%2020240825143617.png)
+- Because in Interface Props we define type of children as `string`. But here we aren't passing a string we are passing more complex structure. To solve that we need to change type children to `ReactNode`.
+  ``` tsx 
+  interface Props {
+    //change type of children from string to ReactNode
+    children: ReactNode;
+  }
+  ```

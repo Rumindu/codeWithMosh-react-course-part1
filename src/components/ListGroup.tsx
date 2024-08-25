@@ -1,9 +1,12 @@
 import { useState } from "react";
 interface Props {
   items: string[];
-  heading: string
+  heading: string;
+  // define method signature only
+  // type of this onSelectItem property is a function which has a parameter type string and return void
+  onSelectItem: (item:string)=>void
 }
-function ListGroup({items,heading}:Props) {
+function ListGroup({items,heading, onSelectItem}:Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
     <>
@@ -20,6 +23,7 @@ function ListGroup({items,heading}:Props) {
             }
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item)
             }}
           >
             {item}

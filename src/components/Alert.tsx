@@ -1,10 +1,11 @@
 interface Props{
-  message: String
+  //`message: String` is replaced by `children: String`
+  children: String
 }
 
-const Alert = ({message}:Props) => {
+const Alert = ({children}:Props) => {
   return (
-    <div className="alert alert-primary">{message}</div>
+    <div className="alert alert-primary">{children}</div>
   )
 }
 

@@ -3,7 +3,7 @@ import Alert from "./components/Alert";
 function App() {
   return (
     <div>
-      <Alert message="Danger!!!!" />
+      <Alert>Hello world</Alert>
     </div>
   );
 }

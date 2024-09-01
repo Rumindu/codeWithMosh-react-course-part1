@@ -3,17 +3,14 @@ import Alert from "./components/Alert";
 import Button from "./components/Button";
 
 function App() {
-  const [clicked, setClicked] = useState(0);
-  const markClicked = () => {
-    setClicked(1);
-  };
-  const clearClicked = () => {
-    setClicked(0);
-  };
+  const [alertVisible, setAlertVisible] = useState(false);
+
   return (
     <div>
-      <Alert onClicked={clearClicked} clicked={clicked}>My alert</Alert>
-      <Button onClick={markClicked} btnColor="danger">
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisible(false)}>My alert</Alert>
+      )}
+      <Button onClick={() => setAlertVisible(true)} btnColor="danger">
         My Button
       </Button>
     </div>

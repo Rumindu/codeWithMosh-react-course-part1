@@ -1,12 +1,11 @@
 import { useState } from "react";
+import "./ListGroup.css";
 interface Props {
   items: string[];
   heading: string;
-  // define method signature only
-  // type of this onSelectItem property is a function which has a parameter type string and return void
-  onSelectItem: (item:string)=>void
+  onSelectItem: (item: string) => void;
 }
-function ListGroup({items,heading, onSelectItem}:Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
     <>
@@ -16,14 +15,10 @@ function ListGroup({items,heading, onSelectItem}:Props) {
         {items.map((item, index) => (
           <li
             key={item}
-            className={
-              index === selectedIndex
-                ? "list-group-item active"
-                : "list-group-item"
-            }
+            className={index === selectedIndex ? "active" : ""}
             onClick={() => {
               setSelectedIndex(index);
-              onSelectItem(item)
+              onSelectItem(item);
             }}
           >
             {item}

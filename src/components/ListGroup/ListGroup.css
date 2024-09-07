@@ -1,6 +1,7 @@
 .list-group{
   list-style: none;
   padding: 0%;
+  background-color: green;
 }
 .active{
   background-color: red;

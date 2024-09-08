@@ -14,5 +14,7 @@
 	<ul className={styles['list-group']}>
 	```
 - So now we couldn't see any CSS clashes. How does it work?
+
   ![](assets/Pasted%20image%2020240908153129.png)
+  
   - So here we couldn't see `list-group` class name. It's encoded. As part of bundling application Vite takes all the CSS modules and create unique class. So it will prevent CSS clashing.

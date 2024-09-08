@@ -1,14 +1,9 @@
 # CSS Modules
-- CSS modules with this `[ ]` is a little bit ugly. So usually when using CSS modules, prefer to use **Camal** notation. So instead of using `-` we use the Camal notation.
-  ``` css 
-	/*ListGroup.module.css*/
-	.listGroup{
-		list-style: none;
-		padding: 0%;
-	}
-	```
-- With that we can access this CSS class just like a regular JS object.
+- what if we want to add multiple CSS classes to the element
   ``` tsx 
-	//ListGroup.tsx  
-	<ul className={styles.listGroup}>
+	//ListGroup.tsx 
+	<ul className={[styles.listGroup,styles.container].join(' ')}>
 	```
+- why `join` ?
+  
+  ![](assets/Pasted%20image%2020240908215548.png)

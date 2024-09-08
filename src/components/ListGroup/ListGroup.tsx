@@ -11,7 +11,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
     <>
       <h1>{heading}</h1>
       {items.length === 0 && <p>No item found</p>}
-      <ul className={styles.listGroup}>
+      <ul className={[styles.listGroup,styles.container].join(' ')}>
         {items.map((item, index) => (
           <li
             key={item}

@@ -1,8 +1,8 @@
-function Message(){
-  const name ='Rumindu';
-  if (name)
-    return <h1>Hello {name}</h1>
-  return <h1>Hello world</h1>
-}
+let count = 0;
 
-export default Message
+const Message = () => {
+  count++; // Modifying count during rendering
+  return <div>Message {count}</div>;
+};
+
+export default Message;

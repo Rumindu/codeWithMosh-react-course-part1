@@ -1,9 +1,13 @@
-import { BsCalendar } from "react-icons/bs";
+import Message from "./Message";
 
 const App = () => {
   return (
-    <div><BsCalendar color="red" size="40"/></div>
-  )
-}
+    <>
+      <Message />
+      <Message />
+      <Message />
+    </>
+  );
+};
 
-export default App
+export default App;

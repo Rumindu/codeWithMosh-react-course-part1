@@ -1,7 +1,6 @@
-let count = 0;
-
 const Message = () => {
-  count++; // Modifying count during rendering
+  let count = 0; // Declared as part of rendering
+  count++;
   return <div>Message {count}</div>;
 };
 

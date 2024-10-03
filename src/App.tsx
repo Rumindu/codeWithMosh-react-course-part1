@@ -3,9 +3,9 @@ import { useState } from "react";
 const App = () => {
   const [drink, setDrink] = useState({ title: "Coke", price: 5 });
   const handleClick = () => {
-    drink.price = 6;
-    // This won't work because React doesn’t detect the change.
-    setDrink(drink);
+    const newDrink = { title: "coke", price: 6 };
+
+    setDrink(newDrink);
   };
   return (
     <div>

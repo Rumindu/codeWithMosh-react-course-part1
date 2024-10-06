@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 const App = () => {
-  const [drink, setDrink] = useState({ title: "Coke", price: 5 });
-  const handleClick = () => {
-    setDrink({ ...drink, price: 6 });
-  };
+  const [customer, setCustomer] = useState({
+    name: "John Doe",
+    address: { city: "New York", zipCode: "10001" },
+  });
+  const handleClick = () => {};
   return (
     <div>
-      {/* to display price update */}
-      {drink.price}
       <button onClick={handleClick}>Click me</button>
     </div>
   );

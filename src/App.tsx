@@ -1,22 +1,22 @@
 import { useState } from "react";
 
 const App = () => {
-  const [tags, setTags] = useState(["happy", "sad", "excited"]);
+  const [bugs, setBugs] = useState([
+    { id: 1, title: "Bug 1", fixed: false },
+    { id: 2, title: "Bug 2", fixed: false },
+  ]);
   const handleClick = () => {
-    // Final setTag() method only execute. please comment others to see relevant output
-
-    //Add new item to the array
-    setTags([...tags, "cheerful"]);
-
-    // Remove item from the array
-    setTags(tags.filter((tag) => tag !== "sad"));
-
-    // Update item in the array
-    setTags(tags.map((tag) => (tag === "excited" ? "thrilled" : tag)));
+    setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
   };
   return (
     <div>
-      {tags.join(", ")}
+      {bugs.map((bug) => {
+        return (
+          <div>
+            {bug.title} {bug.fixed ? "Fixed" : "Not fixed"}
+          </div>
+        );
+      })}
       <button style={{ marginLeft: "5px" }} onClick={handleClick}>
         Click me
       </button>

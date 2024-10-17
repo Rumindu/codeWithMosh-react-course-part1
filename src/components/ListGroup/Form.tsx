@@ -1,8 +1,12 @@
 import { FieldValues, useForm } from "react-hook-form";
 
 function Form() {
-  const { register, handleSubmit, formState } = useForm();
-  console.log("formState.errors", formState.errors);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const onSubmit = (data: FieldValues) => {
     console.log(data);
   };
@@ -18,9 +22,9 @@ function Form() {
           type="text"
           className="form-control"
         />
-        {formState.errors.name?.type === "required" && <p>Name is required.</p>}
-        {formState.errors.name?.type === "minLength" && (
-          <p>Name must be at least 3 characters long.</p>
+        {errors.name?.type === "required" && <p className="text-danger">Name is required.</p>}
+        {errors.name?.type === "minLength" && (
+          <p className="text-danger">Name must be at least 3 characters long.</p>
         )}
       </div>
       <div className="mb-3">
